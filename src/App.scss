@@ -26,6 +26,17 @@ header {
   transform: rotate(-35deg);
 }
 
+.stickyNoteContainer {
+  width: 18%;
+  position: absolute;
+  top: 0;
+  right: 4%;
+}
+
+.stickyNoteContainer img {
+  max-width: 100%;
+}
+
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 3rem;
@@ -81,6 +92,11 @@ input[type="submit"] {
   border-radius: 5px;
   font-size: 1.2rem;
   font-family: 'Permanent Marker', cursive;
+  transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+  background-color: pink;
 }
 
 .goals h3 {
@@ -91,6 +107,7 @@ input[type="submit"] {
   width: 200px;
   text-align: center;
 }
+
 
 .images {
   width: 22%;
@@ -107,13 +124,19 @@ input[type="submit"] {
 .goals h3 {
   position: absolute;
   z-index: 1;
+  transition: all 1s;
 }
 
 .goals h3:first-child {
-  top: 15%;
-  right: 10%;
+  top: 20%;
+  right: 20%;
   transform: rotate(5deg);
 }
+
+.goals h3:first-child:hover {
+  transform: scale(1.1);
+}
+
 
 .goals h3:nth-child(2) {
   top: 17%;
@@ -121,9 +144,17 @@ input[type="submit"] {
   transform: rotate(-5deg);
 }
 
+.goals h3:nth-child(2):hover {
+  transform: rotate(10deg);
+}
+
 .goals h3:nth-child(3) {
-  bottom: 30%;
-  right: 5%;
+  bottom: 5%;
+  right: 35%;
+}
+
+.goals h3:nth-child(3):hover {
+  transform: rotate(-10deg);
 }
 
 .goals h3:nth-child(4) {
@@ -132,18 +163,33 @@ input[type="submit"] {
   transform: rotate(5deg);
 }
 
+.goals h3:nth-child(4):hover {
+  transform: scale(1.2);
+}
+
+@keyframes move {
+  0% {transform: rotate(0deg)}
+  30% {transform: rotate(-2deg)}
+  60% {transform: rotate(2deg)}
+  95% {transform: rotate(1deg)}
+}
+
+.stickyNoteContainer {
+  animation: move 5s ease-in-out infinite;
+}
+
 .photoList .images {
   position: absolute;
 }
 
 .images:first-child {
-  top: 27%;
+  top: 33%;
   right: 10%;
   transform: rotate(-4deg)
 }
 
 .images:nth-child(2) {
- bottom: 1%;
+  bottom: 1%;
   left: 10%;
 }
 
@@ -153,14 +199,21 @@ input[type="submit"] {
 }
 
 .images:nth-child(4) {
-  bottom: 5%;
-  right: 8%;
+  bottom: 1%;
+  right: 15%;
   transform: rotate(5deg);
 }
 
 .modal {
   text-align: right;
   margin: 0 20px 5px 0;
+}
+
+@keyframes grow {
+0% {transform: scale(1.05)}
+50% {transform: scale(1.1)}
+75% {transform: scale(1.05)}
+90% {transform: scale(1.02)}
 }
 
 .modalButton {
@@ -170,6 +223,7 @@ input[type="submit"] {
   background-color: black;
   color: white;
   border: none;
+  animation: grow 3s ease-in-out infinite;
 }
 
 .modalInfo {
@@ -267,6 +321,11 @@ li {
     font-size: 2.4rem;
   }
 
+  .stickyNoteContainer {
+    top: 7%;
+    right: 4%;
+  }
+
   form {
     width: 80%;
   }
@@ -297,7 +356,10 @@ li {
 
 
 @media (max-width: 750px){
-  
+  .stickyNoteContainer {
+    display: none;
+  }
+
   .modalInfo {
     width: 60%;
     padding: 50px;

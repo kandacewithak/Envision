@@ -20,6 +20,15 @@ header {
   top: 25%;
   transform: rotate(-35deg); }
 
+.stickyNoteContainer {
+  width: 18%;
+  position: absolute;
+  top: 0;
+  right: 4%; }
+
+.stickyNoteContainer img {
+  max-width: 100%; }
+
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: 3rem;
@@ -68,7 +77,11 @@ input[type="submit"] {
   border: 2px solid black;
   border-radius: 5px;
   font-size: 1.2rem;
-  font-family: 'Permanent Marker', cursive; }
+  font-family: 'Permanent Marker', cursive;
+  transition: 0.5s; }
+
+input[type="submit"]:hover {
+  background-color: pink; }
 
 .goals h3 {
   background-color: #fffff6;
@@ -90,32 +103,58 @@ input[type="submit"] {
 
 .goals h3 {
   position: absolute;
-  z-index: 1; }
+  z-index: 1;
+  transition: all 1s; }
 
 .goals h3:first-child {
-  top: 15%;
-  right: 10%;
+  top: 20%;
+  right: 20%;
   transform: rotate(5deg); }
+
+.goals h3:first-child:hover {
+  transform: scale(1.1); }
 
 .goals h3:nth-child(2) {
   top: 17%;
   left: 10%;
   transform: rotate(-5deg); }
 
+.goals h3:nth-child(2):hover {
+  transform: rotate(10deg); }
+
 .goals h3:nth-child(3) {
-  bottom: 30%;
-  right: 5%; }
+  bottom: 5%;
+  right: 35%; }
+
+.goals h3:nth-child(3):hover {
+  transform: rotate(-10deg); }
 
 .goals h3:nth-child(4) {
   bottom: 25%;
   left: 10%;
   transform: rotate(5deg); }
 
+.goals h3:nth-child(4):hover {
+  transform: scale(1.2); }
+
+@keyframes move {
+  0% {
+    transform: rotate(0deg); }
+  30% {
+    transform: rotate(-2deg); }
+  60% {
+    transform: rotate(2deg); }
+  95% {
+    transform: rotate(1deg); } }
+
+.stickyNoteContainer {
+  animation: move 5s ease-in-out infinite; }
+
 .photoList .images {
   position: absolute; }
 
 .images:first-child {
-  top: 27%;
+  top: 33%;
   right: 10%;
   transform: rotate(-4deg); }
 
@@ -128,13 +167,23 @@ input[type="submit"] {
   left: 2%; }
 
 .images:nth-child(4) {
-  bottom: 5%;
-  right: 8%;
+  bottom: 1%;
+  right: 15%;
   transform: rotate(5deg); }
 
 .modal {
   text-align: right;
   margin: 0 20px 5px 0; }
+
+@keyframes grow {
+  0% {
+    transform: scale(1.05); }
+  50% {
+    transform: scale(1.1); }
+  75% {
+    transform: scale(1.05); }
+  90% {
+    transform: scale(1.02); } }
 
 .modalButton {
   border-radius: 50%;
@@ -142,7 +191,8 @@ input[type="submit"] {
   padding: 0 10px;
   background-color: black;
   color: white;
-  border: none; }
+  border: none;
+  animation: grow 3s ease-in-out infinite; }
 
 .modalInfo {
   position: absolute;
@@ -221,6 +271,9 @@ li {
     margin: 0;
     width: 60%;
     font-size: 2.4rem; }
+  .stickyNoteContainer {
+    top: 7%;
+    right: 4%; }
   form {
     width: 80%; }
   form h2 {
@@ -237,6 +290,8 @@ li {
     margin-top: 20px; } }
 
 @media (max-width: 750px) {
+  .stickyNoteContainer {
+    display: none; }
   .modalInfo {
     width: 60%;
     padding: 50px; }

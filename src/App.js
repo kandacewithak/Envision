@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
+import stickynote from './stickynote.png';
 
 import Form from './Form';
 import DisplayGoals from './DisplayGoals';
@@ -86,6 +87,9 @@ class App extends Component {
         <header>
           <h1>My Vision Board</h1>
         </header>
+        <div className="stickyNoteContainer">
+          <img src={stickynote} alt=""/>
+        </div>
         <PopUp />
         <Form addGoals={this.addGoals} changeFormState={this.changeFormState}/>
         <DisplayGoals listOfGoals={this.state.goalsList} />
