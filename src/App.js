@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 
-// import firebase from './firebase';
-
 import Form from './Form';
 import DisplayGoals from './DisplayGoals';
 import DisplayPhotos from './DisplayPhotos';
@@ -24,6 +22,7 @@ class App extends Component {
       showForm: true,
       lifeGoals: []
     }
+    this.removeItem = this.removeItem.bind(this);
   }
   goalsToArray = (object) => {
     const goalsArray  = Object.values(object);
@@ -73,12 +72,13 @@ class App extends Component {
       lifeGoals: lifeGoals
     })
   }  
-  removeItem (itemIndex) {
+  removeItem (index) {
     const lifeGoals = this.state.lifeGoals;
-    lifeGoals.splice(itemIndex, 1);
+    lifeGoals.splice(index, 1)
     this.setState({
       lifeGoals: lifeGoals
     })
+
   }
   render() {
     return (
@@ -90,8 +90,7 @@ class App extends Component {
         <Form addGoals={this.addGoals} changeFormState={this.changeFormState}/>
         <DisplayGoals listOfGoals={this.state.goalsList} />
         <DisplayPhotos photoArray={this.state.goalsPhotos}/>
-        {this.state.showForm ? null : <LifeGoals addToLifeGoals={this.addToLifeGoals} lifeGoals={this.state.lifeGoals} removeItem={this.removeItem}/>}
-
+        {this.state.showForm ? null : <LifeGoals addToLifeGoals={this.addToLifeGoals} lifeGoals={this.state.lifeGoals} removeItem={this.removeItem} />}
       </div>
     );
   }

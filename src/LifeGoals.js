@@ -31,7 +31,7 @@ class LifeGoals extends Component {
         <ul>
           {this.props.lifeGoals.map((lifeGoal, i) => {
             return (
-              <li key={i}>{lifeGoal}<i onClick={() => this.props.removeItem(lifeGoal.key)} class="fas fa-check"></i></li>
+              <li key={`todo-${i}`}>{lifeGoal}<button onClick={() => this.props.removeItem(i)}><i className="fas fa-times"></i></button></li>
               )
           })}  
         </ul>

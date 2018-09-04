@@ -3,10 +3,10 @@ import React from 'react';
 const DisplayGoals = (props) => {
   const goalArray = Object.entries(props.listOfGoals);
   return (
-    <section className="goalList">
-    {goalArray.map((goal) => {
+    <section className="goals">
+    {goalArray.map((goal, i) => {
       return (
-        <h3 key={goal[0]}>{goal[1]}</h3>
+        <h3 key={goal+ i}>{goal[1]}</h3>
       )
     })}
     </section>

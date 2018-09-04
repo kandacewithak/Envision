@@ -64,7 +64,7 @@ form h2 {
 }
 
 input[type="text"] {
-  width: 75%;
+  width: 85%;
   border: none;
   border-bottom: 3px solid black;
   margin-bottom: 5px;
@@ -83,11 +83,7 @@ input[type="submit"] {
   font-family: 'Permanent Marker', cursive;
 }
 
-.hide {
-  display: none;
-}
-
-.goalList h3 {
+.goals h3 {
   background-color: #fffff6;
   border-radius: 5px;
   font-size: 2rem;
@@ -108,29 +104,29 @@ input[type="submit"] {
   border:1px solid #999999;
 }
 
-.goalList h3 {
+.goals h3 {
   position: absolute;
   z-index: 1;
 }
 
-.goalList h3:first-child {
+.goals h3:first-child {
   top: 15%;
   right: 10%;
   transform: rotate(5deg);
 }
 
-.goalList h3:nth-child(2) {
+.goals h3:nth-child(2) {
   top: 17%;
   left: 10%;
   transform: rotate(-5deg);
 }
 
-.goalList h3:nth-child(3) {
+.goals h3:nth-child(3) {
   bottom: 30%;
   right: 5%;
 }
 
-.goalList h3:nth-child(4) {
+.goals h3:nth-child(4) {
   bottom: 25%;
   left: 10%;
   transform: rotate(5deg);
@@ -240,6 +236,12 @@ input[type="submit"] {
   border: 1px solid black;
 }
 
+.goalList button {
+  border: none;
+  background-color: white;
+  margin-left: 10px;
+}
+
 ul {
   list-style: none;
   padding: 10px;
@@ -250,6 +252,228 @@ li {
   border-bottom: 1px solid #ddeaf9;
   margin-bottom: 10px;
 }
+
+
+
+@media (max-width: 950px){
+  header {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  h1 {
+    margin: 0;
+    width: 60%;
+    font-size: 2.4rem;
+  }
+
+  form {
+    width: 80%;
+  }
+  
+  form h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.8rem;
+  }
+  
+  input[type="text"] {
+    width: 80%;
+    font-size: 1.2rem;
+  }
+  
+  input[type="submit"] {
+    font-size: 1.2rem;
+  }
+
+  .images {
+    width: 25%;
+  }
+
+  .modal {
+    margin-top: 20px;
+  }
+
+}
+
+
+@media (max-width: 750px){
+  
+  .modalInfo {
+    width: 60%;
+    padding: 50px;
+  }
+  
+  .modalInfo h2 {
+    font-size: 1.2rem;
+  }
+  
+  .modalInfo p {
+    text-align: left;
+    font-size: 1.2rem;
+  }
+  
+  .images {
+    width: 40%;
+  }
+
+  .images img {
+    transform: rotate(3deg);
+  }
+
+  .images:nth-child(4) {
+    bottom: 3%;
+    right: 5%;
+  }
+
+  .goals h3:first-child {
+    top: 10%;
+    right: 10%;
+  }
+  
+  .goals h3:nth-child(2) {
+    top: 10%;
+    left: 10%;
+  }
+  
+  .goals h3:nth-child(3) {
+    bottom: 30%;
+    right: 5%;
+  }
+  
+  .goals h3:nth-child(4) {
+    bottom: 25%;
+    left: 10%;
+  }
+
+  .images:first-child {
+    top: 23%;
+  }
+  
+  .images:nth-child(3) {
+    top: 25%;
+    left: 2%;
+  }
+
+  .goalList {
+    margin-top: 40px;
+    width: 50%;
+    position: absolute;
+    left: 30%;
+    bottom: -50%;
+  }
+  
+}
+
+@media (max-width: 650px){
+  h1 {
+    width: 100%;
+  }
+
+  .modal {
+    margin-top: 5px;
+  }
+
+  .images:nth-child(4) {
+    bottom: 5%;
+    right: 8%;
+  }
+
+}
+
+@media (max-width: 550px){
+
+  h1 {
+    font-size: 1.6rem;
+  }
+
+  .modalInfo {
+    left: 10%;
+    bottom: 10%;
+  }
+
+  .photoList .images {
+    position: static;
+    width: 75%;
+    margin: 25px auto;
+  }
+
+ .images:first-child, .images:nth-child(3) {
+    transform: rotate(1deg);
+  }
+
+.images:nth-child(2), .images:nth-child(4) {
+    transform: rotate(-5deg);
+  }
+
+  .goals h3:first-child {
+    top: 15%;
+    right: 10%;
+  }
+  
+  .goals h3:nth-child(2) {
+    top: 50%;
+    left: 5%;
+  }
+  
+  .goals h3:nth-child(3) {
+    bottom: 5%;
+    right: 5%;
+  }
+  
+  .goals h3:nth-child(4) {
+    bottom: -25%;
+    left: 10%;
+  }
+
+  .goalList {
+    position: static;
+  }
+}
+
+
+
+@media (max-width: 450px){
+
+  form {
+    padding: 30px;
+  }
+  
+  form h2 {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.4rem;
+  }
+  
+  input[type="text"] {
+    width: 90%;
+    font-size: 0.8rem;
+  }
+  
+  input[type="submit"] {
+    font-size: 0.8rem;
+  }
+
+  .modalInfo {
+    padding: 20px;
+    left: 8%;
+    bottom: 18%;
+    width: 70%;
+  }
+
+  .modalInfo p {
+    font-size: 1rem;
+  }
+
+  .goalList {
+    width: 70%;
+  }
+
+  .goalListForm {
+    width: 70%;
+  }
+
+}
+
+
 
 
 

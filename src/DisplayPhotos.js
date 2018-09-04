@@ -4,10 +4,10 @@ const DisplayPhotos = (props) => {
   console.log(props.photoArray)
   return (
     <section className="photoList">
-      {props.photoArray.map((goal) => {
+      {props.photoArray.map((goal,i) => {
         return (
           <div className="images">
-            <img src={goal} alt=""/>
+            <img src={goal + i} alt=""/>
           </div>
         )
       })}
