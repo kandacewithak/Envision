@@ -6,14 +6,13 @@ const DisplayPhotos = (props) => {
     <section className="photoList">
       {props.photoArray.map((goal,i) => {
         return (
-          <div className="images">
-            <img src={goal + i} alt=""/>
+          <div className={`images`+ i}>
+            <img className={`image` + i} key={goal+i} src={goal + i} alt=""/>
           </div>
         )
       })}
     </section>
     )
-
 };
 
 export default DisplayPhotos;
